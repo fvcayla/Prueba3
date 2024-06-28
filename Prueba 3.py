@@ -6,7 +6,7 @@ def generar_saldo_aleatorio():
   """Genera un saldo aleatorio entre 1000 y 100000."""
   return random.randint(1000, 100000)
 
-# Crear una lista de clientes
+# Crea una lista de clientes
 clientes = [
     {"nombre": "Cliente 1", "saldo": generar_saldo_aleatorio()},
     {"nombre": "Cliente 2", "saldo": generar_saldo_aleatorio()},
@@ -20,13 +20,13 @@ clientes = [
     {"nombre": "Cliente 10", "saldo": generar_saldo_aleatorio()},
 ]
 
-# Escribir datos de clientes en un archivo SSV
+# Escribe datos de clientes en un archivo CSV
 with open("datos_clientes.csv", "w") as f:
     for cliente in clientes:
         f.write(f"{cliente['nombre']},{cliente['saldo']}\n")
 
 def encontrar_saldo_mayor():
-  """Encuentra el saldo más alto entre los clientes."""
+  """Encuentra el saldo mayor entre los clientes."""
   saldo_mayor = 0
   for cliente in clientes:
     if cliente["saldo"] > saldo_mayor:
@@ -34,7 +34,7 @@ def encontrar_saldo_mayor():
   return saldo_mayor
 
 def encontrar_saldo_menor():
-  """Encuentra el saldo más bajo entre los clientes."""
+  """Encuentra el saldo menor entre los clientes."""
   saldo_menor = clientes[0]["saldo"]
   for cliente in clientes:
     if cliente["saldo"] < saldo_menor:
@@ -49,7 +49,7 @@ def calcular_promedio_saldos():
   saldo_promedio = saldo_total / len(clientes)
   return saldo_promedio
 
-# Interfaz de usuario para interactuar con la aplicación
+# Menu de usuario para interactuar con la aplicación
 while True:
     print("\n**Servicio de administración de cuentas**")
     print("1. Listado de clientes")
@@ -61,7 +61,7 @@ while True:
     opcion = input("Ingrese su opción (1-5): ")
 
     if opcion == "1":
-        # Mostrar datos de clientes desde el archivo SSV
+        # Mostrar datos de clientes desde el archivo CSV
         with open("datos_clientes.csv", "r") as f:
             for line in f:
                 nombre, saldo = line.strip().split(",")
