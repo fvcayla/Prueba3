@@ -80,7 +80,7 @@ while True:
         print(f"El promedio de saldos es: {saldo_promedio}")
 
     elif opcion == "5":
-        print("Finalizando...")
+        print("Vuelva Pronto")
         break
 
     else:
